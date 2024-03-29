@@ -164,7 +164,7 @@ class VaultBackend(BaseSecretsBackend, LoggingMixin):
         if not self.mount_point:
             split_secret_path = secret_path.split("/", 1)
             if len(split_secret_path) < 2:
-                return None, None
+                return "", secret_path
             return split_secret_path[0], split_secret_path[1]
         else:
             return "", secret_path
